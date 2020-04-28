@@ -2,17 +2,14 @@ import React from 'react';
 import './App.css';
 
 function algo() {
-  var r = 0, products = 24;
-  while(products>=3){
-    if(products >= 7){
-      r++;
-      products-=7;
-    }
-    else if(products >= 3){
-      r++;
-      products-=3;
-    }
-  }
+  var r = []
+  var tower = ["ABCDEF","BCAD","ADEFQRX","BEDFG","EFGHZ"]
+  tower.forEach(t => {
+    if(t === t.split("").sort().join(""))
+      r.push("YES")
+    else
+      r.push("NO")  
+  })
   return r
 }
 

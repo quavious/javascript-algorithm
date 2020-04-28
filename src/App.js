@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+function algo(arr) {
+  if(arr.length <= 1) return arr;
+  else {
+    const pivot = arr[0];
+    const left = [];
+    const right = [];
+
+    for(let i=1; i<arr.length;i++){
+      if(arr[i]<=pivot) left.push(arr[i]);
+      else right.push(arr[i]);
+    }
+    return algo(left).concat(pivot, algo(right));
+  }
+}
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  var arr = "9 4 6 7 3 1 0 5 2 15 10".split(" ").map(i => parseInt(i, 10))
+  console.log(algo(arr));
+  return <h1>HELLO WORLD!</h1>
 }
 
 export default App;

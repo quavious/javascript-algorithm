@@ -2,14 +2,10 @@ import React from 'react';
 import './App.css';
 
 function algo() {
-  var num = 12345678900
-  var result = "";
-
-  while(num){
-    result = (num%1000).toString(10) + "," + result
-    num = parseInt(num/1000);
-  }
-  return result.slice(0, result.length-1);
+  var students = ['강은지','김유정','박현서','최성훈','홍유진','박지호','권윤일']
+  students.forEach((s, idx) => {
+    console.log(`번호 : ${idx+1}, 이름 : ${s}`)
+  })
 }
 
 function App() {

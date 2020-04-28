@@ -2,16 +2,14 @@ import React from 'react';
 import './App.css';
 
 function algo() {
-  var num = 1000;
-  var flag = 0;
-  var result = []
-  for(var i=1;i<=num;i++){
-    result.push(...i.toString(10).split(""))
+  var num = 12345678900
+  var result = "";
+
+  while(num){
+    result = (num%1000).toString(10) + "," + result
+    num = parseInt(num/1000);
   }
-  result.forEach(i => {
-    if(i === "1") flag++;
-  })
-  return flag;
+  return result.slice(0, result.length-1);
 }
 
 function App() {
